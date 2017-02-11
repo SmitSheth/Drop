@@ -21,7 +21,7 @@ public class Generate : MonoBehaviour {
 	void CreateObstacle()
 	{
 		//Vector3 spawnPosition = new Vector3 (spawnValues.x, spawnValues.y, Random.Range (-spawnValues.z, spawnValues.z));
-		Vector3 spawnPosition = new Vector3 (spawnValues.x, spawnValues.y, Random.Range (-21,-4 ));
+		Vector3 spawnPosition = new Vector3 (spawnValues.x, spawnValues.y, Random.Range (-18,-6 ));
 		Quaternion spawnRotation = Quaternion.identity;
 		Instantiate (bar, spawnPosition, spawnRotation);
 		//Instantiate(bar);
@@ -31,7 +31,7 @@ public class Generate : MonoBehaviour {
 
 	void CreatePowerUps()
 	{
-		if (Random.value > .8f) {
+		if (Random.value > .6f) {
 			Vector3 spawnPosition = new Vector3 (10, spawnValues.y+1.5f, Random.Range (-spawnValues.z, spawnValues.z));
 			Quaternion spawnRotation = Quaternion.identity;
 			Instantiate (powerUps[Random.Range(0,powerUps.GetLength(0))], spawnPosition, spawnRotation);

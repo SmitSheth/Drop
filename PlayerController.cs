@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour {
 
 	void Start()
 	{
-		transform.GetChild (0).gameObject.SetActive (false);   //for flare
 		Renderer rend = GetComponent<Renderer> (); 
 		rend.material = materialsCopy[0];
 		speed = 15;
@@ -34,19 +33,21 @@ public class PlayerController : MonoBehaviour {
 	}
 	public void speedUp()
 	{
-		Debug.Log (speed);
+		//Debug.Log (speed);
 		StartCoroutine(StopSpeedUp());
 	}
 	IEnumerator StopSpeedUp()
 	{
 		//WaitForSeconds (2.5f);
 		speed=30; 
+		transform.GetChild (0).gameObject.SetActive (true);    //for trail flare
 		yield return new WaitForSeconds (2.5f);
+		transform.GetChild (0).gameObject.SetActive (false);
 		speed = 15;
 	}
 	public void speedDown()
 	{
-		Debug.Log (speed);
+		//Debug.Log (speed);
 		StartCoroutine(StopSpeedDown());
 	}
 	IEnumerator StopSpeedDown()

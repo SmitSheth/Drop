@@ -20,6 +20,8 @@ public class DestroyByBoundary : MonoBehaviour {
 	{
 		if(other.name=="Player")
 			gameController.GameOver();
+		//Debug.Log (other.transform.parent.gameObject);
+		//Destroy(other.transform.parent.gameObject);
 		Destroy(other.gameObject);
 	}
 
